@@ -22,11 +22,11 @@ export default function ProjectsPage() {
     const [reset, setreset] = useState(false)
 
     const windowsPosition: any = {
-        Project1: "100px",
-        Project2: "180px",
-        Project3: "260px",
-        Project4: "340px",
-        Project5: "420px"
+        Project1: "70px",
+        Project2: "130px",
+        Project3: "190px",
+        Project4: "250px",
+        Project5: "310px"
 
     }
     

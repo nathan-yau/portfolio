@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import styles from "./ProjectWindows.module.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function ProjectWindows({focused, setfocused, reset, projectCode, windowsPosition, projectDetails}: { focused: string, setfocused: Function, reset: boolean, projectCode: string, windowsPosition:string, projectDetails: any}) {
     const [peekPosition, setpeekPosition] = useState(windowsPosition)

@@ -72,7 +72,7 @@ export default function ExperiencesPage() {
                 delay: 5,
                 duration: 1
             }}
-            style={{display: "flex", gap: "10px", flexDirection: "column", position: "absolute", top: "-50px", height: '45vh', width: "50%"}}>
+            style={{display: "flex", gap: "10px", flexDirection: "column", position: "absolute", top: "-50px", height: '60vh', width: "50%"}}>
                 <div className={styles.about}>About</div>
                 <div className={styles.work}>Work Experience</div>
                 <div className={styles.school}>Education</div>
