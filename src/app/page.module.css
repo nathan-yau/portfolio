@@ -10,7 +10,7 @@
 .navSection {
   display: inherit;
   justify-content: space-between;
-  align-items: end;
+  align-items: flex-end;
   font-size: 0.85rem;
   max-width: var(--max-width);
   width: var(--max-width);
@@ -21,7 +21,7 @@
 .footerSection {
   display: inherit;
   justify-content: flex-end;
-  align-items: end;
+  align-items: flex-end;
   font-size: 0.85rem;
   max-width: var(--max-width);
   width: var(--max-width);

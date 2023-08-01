@@ -79,9 +79,7 @@ export default function Home() {
           <NavMenu></NavMenu>
         </div>
       </div>
-
-      {/* Nav Done Here */}
-        <AnimatePresence mode='wait'>
+        <AnimatePresence>
           {ViewWindow === "Home"? 
               <motion.div
               key="home"
@@ -135,16 +133,15 @@ export default function Home() {
                 : null}
         </AnimatePresence>
 
-
       <div className={styles.grid}>
-      <div
-          className={styles.card}
-          onClick={() => setViewWindow("Experiences")}
-        >
-          <h2>
-          Experiences<span>-&gt;</span>
-          </h2>
-          <p>Former Project Coordinator turned Computer Science student.</p>
+        <div
+            className={styles.card}
+            onClick={() => setViewWindow("Experiences")}
+          >
+            <h2>
+            Experiences<span>-&gt;</span>
+            </h2>
+            <p>Former Project Coordinator turned Computer Science student.</p>
         </div>
 
         <div
@@ -180,9 +177,11 @@ export default function Home() {
           </p>
         </div>
       </div>
+
       <div className={styles.footerSection}>
           <p>Last Updated: 29 July 2023 Nathan Yau</p>
       </div>
+      
     </main>
   )
 }

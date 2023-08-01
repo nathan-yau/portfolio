@@ -47,6 +47,16 @@ export default function SectionNav({ViewWindow}: {ViewWindow: string}) {
             }}
             >
         </motion.img>}
+        {ViewWindow === "Skills" &&
+            <motion.img src={"/skills.svg"} alt="folder" width={20} height={20} 
+            initial={{opacity:0, display:'none'}}
+            animate={{opacity:1, display:'block'}}
+            exit = {{opacity:0, transition: { opacity: {duration: 0.5}}}}
+            transition={{
+              opacity: {duration: 1}
+            }}
+            >
+        </motion.img>}
       <motion.p
           key={ViewWindow}
           initial={{opacity:0, x: -20, width: 0}}
