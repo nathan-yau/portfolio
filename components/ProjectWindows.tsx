@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import styles from "./ProjectWindows.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export default function ProjectWindows({focused, setfocused, reset, projectCode, windowsPosition, projectDetails}: { focused: string, setfocused: Function, reset: boolean, projectCode: string, windowsPosition:string, projectDetails: any}) {
+export default function ProjectWindows({focused, setfocused, reset, projectCode, windowsPosition, projectDetails, windowWidth}: { focused: string, setfocused: Function, reset: boolean, projectCode: string, windowsPosition:string, projectDetails: any, windowWidth: number}) {
     const [peekPosition, setpeekPosition] = useState(windowsPosition)
 
     function peekWindows() {
@@ -13,13 +13,16 @@ export default function ProjectWindows({focused, setfocused, reset, projectCode,
         setpeekPosition(windowsPosition)
     }
 
+    const isSmallScreen = windowWidth < 1000;
+    const xValue = isSmallScreen ? "-50%" : projectDetails.startXIndex;
+
     return (
     <motion.div 
     drag
     dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
     whileTap={{ boxShadow: "0px 0px 15px rgba(0,0,0,0.2)"}}
     initial={{opacity:0}}
-    animate={{opacity:1, x: projectDetails.startXIndex, y: projectDetails.startYIndex, border: reset ? "none" : "1px solid transaparent"}}
+    animate={{opacity:1, x: xValue, y: projectDetails.startYIndex, border: reset ? "none" : "1px solid transaparent"}}
     transition={{
         opacity: {duration: 0.75},
         x : {duration: 0.5, ease: "easeInOut"}

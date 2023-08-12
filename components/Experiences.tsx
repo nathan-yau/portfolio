@@ -1,13 +1,14 @@
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./Experiences.module.css";
 
-export default function ExperiencesPage() {
+export default function ExperiencesPage({ windowWidth} : {windowWidth: number}) {
+
     return (
         <div style={{position: "relative"}}>
             <motion.div 
             className={styles.experiencesOuterPage}
             initial={{x:0}}
-            animate={{x:350}}
+            animate={{x: windowWidth > 1100? 270: windowWidth < 850? 200: 210 + windowWidth/150}}
             transition={
                 {delay: 4.5, duration: 1}
             }>
@@ -17,7 +18,9 @@ export default function ExperiencesPage() {
                 animate={{y: -50, opacity:1}}
                 transition={{
                     duration: 1.0
-                }}>
+                }}
+                style={{paddingTop: "100px"}}
+                >
                     <div style={{position: "relative", width: "250px", height: "250px", display: "flex", alignItems: "center", justifyContent: "center"}}>
                         <div style={{position: "relative", width: "200px", height: "200px", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden"}}>
                         <div className={styles.profileImage}></div>
@@ -67,7 +70,7 @@ export default function ExperiencesPage() {
             </motion.div>
             <motion.div
             initial={{opacity:0, x: 100}}
-            animate={{opacity:1, x: 0}}
+            animate={{opacity:1, x: windowWidth > 1000? -70: -90}}
             transition={{
                 delay: 5,
                 duration: 1

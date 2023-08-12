@@ -14,7 +14,7 @@ interface ProjectDetailItem {
   }
 
 
-export default function ProjectsPage() {
+export default function ProjectsPage({windowWidth}: {windowWidth: number}) {
     const [opening, setopening] = useState<Boolean>(true)
     const [projectDetail, setprojectDetail] = useState<{ [key: string]: ProjectDetailItem }>({});
     const [focused, setfocused] = useState("Project5")
@@ -91,7 +91,7 @@ export default function ProjectsPage() {
             style={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column"}}>
             <motion.div className={styles.folder}
                 initial={{x: "0px", y: "0px", scale: 1, opacity: 1}}
-                animate={{x: "-500px", y: "-500px", scale: 0.10, opacity: 0}}
+                animate={{x: "0px", y: "-500px", scale: 0.10, opacity: 0}}
                 transition={{ duration: 0.75, delay: 3.0 }}
                 onAnimationComplete={()=>{setopening(false)}}
             ></motion.div>
@@ -125,11 +125,17 @@ export default function ProjectsPage() {
             projectCode={key}
             windowsPosition={windowsPosition[key]}
             projectDetails={value}
+            windowWidth={windowWidth}
         />
         ))}
-        <div className={styles.selector}>
-            <img src="/reset.svg" width={40} height={40} style={{cursor: "pointer", border: "2px solid black", borderRadius: "5px", padding: "7px"}} onClick={()=> {setreset(true); setfocused('Project5'); setTimeout(() => setreset(false), 500)}}></img>
-        </div>
+        <motion.div 
+            initial={{opacity: 0, rotateX: 360, x: "-50%"}}
+            animate={{opacity: 1, rotateX: 0, x: "-50%"}}
+            exit={{opacity: 0, y: "-500px", x: "-50%"}}
+        className={styles.selector} onClick={()=> {setreset(true); setfocused('Project5'); setTimeout(() => setreset(false), 500)}}>
+            <span>Reset Window</span>
+            <img src="/reset.svg" width={20} height={20}></img>
+        </motion.div>
         </>
     }
         </>

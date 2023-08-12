@@ -2,7 +2,7 @@
 .windows {
     border: 1px solid black;
     left: 50%;
-    width: 65%;
+    width: max(65%,600px);
     height: 450px;
     position: absolute;
     background: rgba(229, 229, 229, 0.9);

@@ -1,11 +1,11 @@
 'use client'
 
 import styles from './page.module.css'
-import NavMenu from '../../components/NavMenu'
+// import NavMenu from '../../components/NavMenu'
 import {motion, AnimatePresence} from 'framer-motion'
 import SectionNav from '../../components/SectionNav'
 import DefaultPage from '../../components/Home'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import ProjectsPage from '../../components/Projects'
 import ExperiencesPage from '../../components/Experiences'
 import SkillsPage from '../../components/Skills'
@@ -15,7 +15,20 @@ export default function Home() {
   const [gitHubHover, setGitHubHover] = useState(false)
   const [linkedinHover, setLinkedinHover] = useState(false)
   const [ViewWindow, setViewWindow] = useState("Home")
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
   
+      window.addEventListener('resize', handleResize);
+  
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
+
   function handleGitHubClick() {
     window.open("https://github.com/nathan-yau")
   }
@@ -76,7 +89,7 @@ export default function Home() {
             </div>
             }
           </div>
-          <NavMenu></NavMenu>
+          {/* <NavMenu></NavMenu> */}
         </div>
       </div>
         <AnimatePresence>
@@ -96,9 +109,9 @@ export default function Home() {
                initial={{ opacity: 0, y: -20 }}
                animate={{ opacity: 1, y: 0 }}
                exit={{ opacity: 0, y: -20 }}
-               className={styles.projectSection}
+               className={`${styles.projectSection} ${styles.bannerSection}`}
              >
-               <ProjectsPage />
+               <ProjectsPage windowWidth = {windowWidth}/>
                </motion.div>
                 : ViewWindow === "Experiences"?
                 <motion.div
@@ -108,7 +121,7 @@ export default function Home() {
                 exit={{ opacity: 0, y: -20 }}
                 className={styles.bannerSection}
               >
-                <ExperiencesPage />
+                <ExperiencesPage windowWidth = {windowWidth}/>
                 </motion.div>
                 : ViewWindow === "Skills"?
                 <motion.div
@@ -132,56 +145,88 @@ export default function Home() {
                 </motion.div>
                 : null}
         </AnimatePresence>
+      
+       {windowWidth <= 1200 ?
+        <>
+        <div className={styles.dockSection}>
+          <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", gap: "5px", cursor: "pointer"}}>
+            <div className={`${styles.dockImage} ${styles.dockExperience}`} style= {{backgroundColor: "rgba(27,167,248,255)"}} onClick={() => setViewWindow("Experiences")}>
+              <img src='/experience.svg' alt="experience" height={55} />
+            </div>
+            <span>Experiences</span>
+          </div>
+          <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", gap: "5px", cursor: "pointer"}}>
+            <div className={`${styles.dockImage} ${styles.dockProjects}`} onClick={() => setViewWindow("Projects")}>
+              <img src='/projects.svg' alt="projects" height={55} />
+            </div>
+            <span>Projects</span>
+          </div>
+          <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", gap: "5px", cursor: "pointer"}}>
+            <div className={`${styles.dockImage} ${styles.dockSkills}`} onClick={() => setViewWindow("Skills")}>
+              <img src='/tools.svg' alt="skills" height={55} />
+            </div>
+            <span>Skills</span>
+          </div>
+          <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", gap: "5px", cursor: "pointer"}}>
+            <div className={`${styles.dockImage} ${styles.dockProjects}`}  onClick={() => setViewWindow("Contact")}>
+              <img src='/contact.svg' alt="contact" height={55} />
+            </div>
+            <span>Contact</span>
+          </div>
+        </div>
+        </>:
+        <>
+        <div className={styles.grid}>
+          <div
+              className={styles.card}
+              onClick={() => setViewWindow("Experiences")}
+            >
+              <h2>
+              Experiences<span>-&gt;</span>
+              </h2>
+              <p>Former Project Coordinator turned Computer Science student.</p>
+          </div>
 
-      <div className={styles.grid}>
-        <div
+          <div
             className={styles.card}
-            onClick={() => setViewWindow("Experiences")}
+            onClick={() => setViewWindow("Projects")}
           >
             <h2>
-            Experiences<span>-&gt;</span>
+              Projects <span>-&gt;</span>
             </h2>
-            <p>Former Project Coordinator turned Computer Science student.</p>
+            <p>Check out some of my projects.</p>
+          </div>
+
+          <div
+            className={styles.card}
+            onClick={() => setViewWindow("Skills")}
+          >
+            <h2>
+              Skills <span>-&gt;</span>
+            </h2>
+            <p>Familiar with multiple programming languages and frameworks.</p>
+          </div>
+
+
+          <div
+            className={styles.card}
+            onClick={() => setViewWindow("Contact")}
+          >
+            <h2>
+              Contact <span>-&gt;</span>
+            </h2>
+            <p>
+              Let's start a conversation.
+            </p>
+          </div>
         </div>
+        </>
+        }
 
-        <div
-          className={styles.card}
-          onClick={() => setViewWindow("Projects")}
-        >
-          <h2>
-            Projects <span>-&gt;</span>
-          </h2>
-          <p>Check out some of my projects.</p>
-        </div>
-
-        <div
-          className={styles.card}
-          onClick={() => setViewWindow("Skills")}
-        >
-          <h2>
-            Skills <span>-&gt;</span>
-          </h2>
-          <p>Familiar with multiple programming languages and frameworks.</p>
-        </div>
-
-
-        <div
-          className={styles.card}
-          onClick={() => setViewWindow("Contact")}
-        >
-          <h2>
-            Contact <span>-&gt;</span>
-          </h2>
-          <p>
-            Let's start a conversation.
-          </p>
-        </div>
-      </div>
-
-      <div className={styles.footerSection}>
+      {/* <div className={styles.footerSection}>
           <p>Last Updated: 29 July 2023 Nathan Yau</p>
-      </div>
+      </div> */}
       
-    </main>
+      </main>
   )
 }
