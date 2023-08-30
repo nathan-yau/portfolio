@@ -1,0 +1,87 @@
+.projects {
+    margin: 40px 30px;
+}
+
+.projectBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    border-radius: 5px;
+    padding: 30px;
+    width: 100%;   
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    border: 1px solid rgba(255, 255, 255, 1);
+    min-width: 100%;
+    min-height: 200px;
+    margin-top: 30px;
+}
+
+.projectTech {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 0px;
+    flex-wrap: wrap;
+}
+
+.techitem {
+    border: 1px solid rgba(255, 255, 255, 1);
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 12px;
+    color: grey;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+
+}
+
+.Content {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+@media (max-width: 600px) {
+    .projectBox {
+        flex-direction: column-reverse;
+        /* reserve the position of items */
+        align-items: flex-start;
+        padding: 30px 20px;
+    }
+}
+
+.projectImage {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.rightside {
+    text-align: right;
+    width: 100%
+}
+
+.projectTitle{
+    margin: 20px 0px;
+}
+
+.projectTitle > h5 {
+    color: grey;
+    margin-top: 5px;
+}
+
+.projectDescription {
+    margin-bottom: 5px;
+}

@@ -1,0 +1,124 @@
+.gear {
+    animation: rotate 2s ease-out 1;
+    -webkit-animation: rotate 2s ease-out 1;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg) scale(0.8);
+    }
+    100% {
+        transform: rotate(3600deg) scale(1.5);
+    }
+    75% {
+        transform: rotate(360deg) scale(1.2);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.1);
+    }
+    25% {
+        transform: rotate(90deg) scale(1.05);
+    }
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+
+.skillsContentContent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+    margin: 0px 0px 10px 0px;
+}
+
+.skills{
+    margin: 40px 30px;
+}
+
+.skillsBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100px;   
+    height: 100px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 1);
+}
+
+.skillsContentTitle {
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin: 0px 0px 20px 0px;
+}
+
+.windows {
+    border: 1px solid black;
+    left: 50%;
+    width: max(65%,600px);
+    height: 450px;
+    position: absolute;
+    background: rgba(229, 229, 229, 0.9);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12.6px);
+    -webkit-backdrop-filter: blur(12.6px);
+    border: 1px solid rgba(229, 229, 229, 0.2);
+    transform: translateX(-50%);
+    transition: all 0.3s ease-in-out;
+    overflow: scroll;
+    -ms-overflow-style: none; 
+  }
+  
+.windows::-webkit-scrollbar {
+    display: none;
+  }
+
+.dot {
+    height: 15px;
+    width: 15px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+
+.windowBar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px 25px 0px;
+    border-radius: 16px 16px 0px 0px;
+    gap: 10px;
+    background-color: whitesmoke;
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+
+.skillsContent{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0px 30px 0px 30px;
+    height: calc(100% - 35px);
+}
+
+.contactItem{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* gap: 50px; */
+    margin-top: 30px;
+}
+
+.contactSection{
+    width: 100%;
+}

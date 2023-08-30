@@ -1,0 +1,54 @@
+.profliolabel {
+    color: grey;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    overflow: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 10px;
+}
+
+.profliolabel::-webkit-scrollbar {
+    display: none;
+}
+
+.companyAcheivement{
+    border: 1px solid grey;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    width: 75%;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 850px) {
+    .profliolabel {
+        flex-direction: row;
+        justify-content: space-evenly;
+        font-size: 12px;
+        margin: 0px 10px;
+        flex-wrap: wrap;
+    }
+
+    .profliolabel > span {
+        border: 1px solid grey;
+        padding: 5px;
+        border-radius: 5px;
+        min-width: 150px;
+    }
+}
+
+@media (max-height: 750px) {
+    .profliolabel {
+        display: none;
+    }
+}
+
+.companyAcheivementDescription{
+    padding: 0px 5px;
+    font-size: 0.85rem;
+}

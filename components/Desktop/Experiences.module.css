@@ -1,0 +1,109 @@
+.experiencesInnerPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    height: 60vh;
+    width: max(350px, 30%);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    border: 1px solid rgba(255, 255, 255, 1);
+    gap: 10px
+}
+
+.experiencesOuterPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+}
+
+.detailSections {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    position: absolute;
+    top: -50px;
+    height: 60vh;
+    width: 50%;
+}
+
+
+.cursor {
+    position: relative;
+    rotate: -45deg;
+    animation: vanishCursor 1.0s ease-in 3s forwards;
+    opacity: 0;
+    transform: translate(10px, -10px);
+  }
+  
+.cursor:before {
+    content: " ";
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    width: 10px;
+    height: 20px;
+    background-color: black;
+  }
+
+.cursor:after {
+    content: " ";
+    position: absolute;
+    border-top: none;
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-bottom: 15px solid black;
+  }
+
+.entryDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 50px;
+    /* animation: vanishLoading 0.5s ease-in 3s forwards; */
+}
+
+.about, .work, .school {
+    display: flex;
+    height: 33%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    border: 1px solid rgba(255, 255, 255, 1);
+    transform: translateX(100px);
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+    font-weight: bold;
+}
+
+@keyframes vanishCursor {
+    0% {
+        opacity: 0;
+        transform: translate(90px, 200px);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(10px, -10px);
+    }
+    99% {
+        opacity: 1;
+        transform: translate(10px, -10px);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(10px, -10px);
+    }
+}
+
+

@@ -1,0 +1,29 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* padding: 0rem 0rem 0 0rem; */
+    min-height: 100vh;
+  }
+
+  .homeContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .glassEffect{
+    background: linear-gradient(135deg, rgba( 255, 255, 255, 0.1 ), rgba( 255, 255, 255, 0));
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 30px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    z-index: 1;
+    width: 85%;
+    height: 0;
+    position: absolute;
+    /* top: 3.5rem; */
+  }

@@ -1,0 +1,28 @@
+.readFile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px 10px;
+    animation: doubleClickEffect 0.5s ease-in 4.0s forwards;
+}
+
+@keyframes doubleClickEffect {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

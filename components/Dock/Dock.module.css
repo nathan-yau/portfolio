@@ -1,0 +1,93 @@
+
+.dockSection {
+    background: rgba(255, 255, 255, 0.34);
+    border-radius: 22px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width:  min(var(--max-width), 100%);
+    max-width: 800px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 55px;
+    height: 110px;
+    width: 85%;
+    padding: 10px 30px;
+    z-index: 10;
+  }
+  
+.dockIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 3px;
+}
+
+  .dockImage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    padding: 7px 0px;
+    transition: all 0.3s ease;
+    transform: scale(1);
+  }
+  
+  .dockProjects {
+    background: rgb(23,182,241);
+    background: linear-gradient(180deg, rgba(23,182,241,1) 0%, rgba(22,127,201,1) 50%, rgba(23,101,226,1) 100%);
+  }
+  
+  .dockExperience {
+    background: rgb(89,245,116);
+    background: linear-gradient(180deg, rgba(89,245,116,1) 0%, rgba(52,205,78,1) 50%, rgba(13,189,42,1) 100%);
+  }
+  
+  .dockSkills {
+    background: rgb(251,91,115);
+    background: linear-gradient(180deg, rgba(251,91,115,1) 0%, rgba(251,65,89,1) 50%, rgba(250,36,60,1) 100%);
+  }
+  
+  .dockImage img {
+    /* position: absolute; */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    padding: 0px 10px;
+    height: 55px;
+  }
+  
+  .dockImage:hover {
+    transform: scale(1.5) translateY(-30px);
+    z-index: 1;
+    fill: #ff9900;
+  }
+
+
+  @media screen and (max-width: 850px) {
+    .label {
+      display: none;
+    }
+
+    .dockSection {
+        height: 80px;
+        padding: 10px 10px;
+        bottom: 40px;
+    }
+
+    .dockImage:hover {
+      transform: unset;
+      z-index: 1;
+      fill: #ff9900;
+    }
+
+    .dockImage img {
+     height: 2.5rem;
+    }
+  }
+  

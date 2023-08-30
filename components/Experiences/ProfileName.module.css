@@ -1,0 +1,26 @@
+.BlinkinEffect {
+    animation: blinking 0.5s step-end 6;
+    border-right: 3px solid transparent;
+    text-align: center;
+}
+
+
+.typingEffect {
+    width: var(--size , 10ch);
+    line-height: 1.5;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s 1;
+}
+
+@keyframes blinking {
+    50% {
+        border-color: black;
+    }
+}
+
+@keyframes typing {
+    0% {
+        width: 0ch;
+    }
+}

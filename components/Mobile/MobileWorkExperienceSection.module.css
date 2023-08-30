@@ -1,0 +1,66 @@
+.experiences {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: min(50px, 10%);
+    height: 100vh;
+}
+
+.experiences::-webkit-scrollbar {
+    display: none;
+  }
+
+.companyIcon {
+    width: 40%;
+    padding: 10px;
+    box-sizing: content-box;
+    border-radius: 10%;
+}
+
+.companySection{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+    padding-top: 20px;
+    gap: 10px;
+    top: 40px;
+}
+
+.imageBorder {
+    /* width: 20%; */
+    /* background: linear-gradient(180deg, rgba(89,245,116,1) 0%, rgb(74, 228, 100) 50%, rgb(21, 187, 49) 100%); */
+    /* padding: 5px 10px;  */
+    /* border-radius: 50%; */
+    box-sizing: content-box;
+    /* border: 1px solid rgba(60, 179, 113, 1); */
+}
+
+.companyAcheivement{
+    border: 1px solid grey;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+.detailSection {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 10px;
+    height: 52%;
+    /* flex: 1; */
+    margin-top: 20px;
+}
+
+.detailSection::-webkit-scrollbar {
+    display: none;
+  }

@@ -1,0 +1,50 @@
+.firstLine {
+    font-weight: 700;
+    font-size: 3.0rem;
+  }
+
+.titleLine {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: grey;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.titleLineContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.logoContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 0;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.logo {
+  animation: fadeOut 0.8s ease-in-out;
+  animation-delay: 4.5s;
+  animation-fill-mode: forwards;
+}
