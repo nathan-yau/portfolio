@@ -33,7 +33,7 @@ export default function ContactSecion() {
                     </div>
                     <span className={styles.contactDetail}>
                         <span>
-                            nyau4@my.bcit.ca
+                            <a href="mailto:nyau4@my.bcit.ca">nyau4@my.bcit.ca</a>
                         </span>
                     </span>
                 </div>
@@ -59,9 +59,6 @@ export default function ContactSecion() {
                         </span>
                     </span>
                 </div>
-            </div>
-            <div style={{marginTop: "50px"}}>
-                Let's connect!
             </div>
         </div>
         </>

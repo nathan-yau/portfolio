@@ -26,17 +26,19 @@ export default function MobilePage() {
             <motion.div 
                 className={styles.glassEffect}
                 initial={{ opacity: 0, y: 200, height: 0}}
-                animate={{ opacity: 1 , y: -50, height: "70vh"}}
+                animate={{ opacity: 1 , y: -90, height: "70vh"}}
                 transition={{
                     duration: 0.5,
                     delay: 3.0,
                     height: {duration: 0.5, delay: 3.5}
                 }}
             >
-                {MobileWindow === "Experiences"? <motion.div style={{height: "100%"}}><MobileWorkExperienceSection></MobileWorkExperienceSection></motion.div>:
-                    MobileWindow === "Projects"? <motion.div style={{height: "100%", overflow: "scroll"}}><MobileProjectSection></MobileProjectSection></motion.div>:
-                    MobileWindow === "Skills"? <motion.div style={{height: "100%", overflow: "scroll"}}><MobileSkillsSection></MobileSkillsSection></motion.div>:
-                    MobileWindow === "Contact"? <motion.div style={{height: "100%", overflow: "scroll"}}><MobileContactSecion></MobileContactSecion></motion.div>: null}
+                <AnimatePresence mode="wait">
+                    {MobileWindow === "Experiences"? <motion.div key="MobileExperience" className={styles.outerWindow} initial={{opacity: 0, y: 50}} animate={{opacity: 1, y: 0}} exit={{opacity: 0, y: -50}}><MobileWorkExperienceSection></MobileWorkExperienceSection></motion.div>:
+                        MobileWindow === "Projects"? <motion.div key="MobileProjects" className={styles.outerWindow} initial={{opacity: 0, y: 50}} animate={{opacity: 1, y: 0}} exit={{opacity: 0, y: -50}}><MobileProjectSection></MobileProjectSection></motion.div>:
+                        MobileWindow === "Skills"? <motion.div key="MobileSkills" className={styles.outerWindow} initial={{opacity: 0, y: 50}} animate={{opacity: 1, y: 0}} exit={{opacity: 0, y: -50}}><MobileSkillsSection></MobileSkillsSection></motion.div>:
+                        MobileWindow === "Contact"? <motion.div key="MobileContact" className={`${styles.outerWindow} ${styles.outerContact}`} initial={{opacity: 0, y: 50}} animate={{opacity: 1, y: 0}} exit={{opacity: 0, y: -50}}><MobileContactSecion></MobileContactSecion></motion.div>: null}
+                </AnimatePresence>
             </motion.div>
             <div className="homeContainer">
                 <Home></Home>

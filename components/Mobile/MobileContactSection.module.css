@@ -3,6 +3,8 @@
     overflow: scroll;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    width: 100%;
+    padding: 0px max(30px, 10%);
 }
 
 .contact::-webkit-scrollbar {
@@ -25,5 +27,5 @@
 }
 
 .contactSection{
-    overflow: hidden;
+    overflow: visible;
 }

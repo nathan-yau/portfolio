@@ -1,6 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./Skills.module.css";
-import { useState, useEffect } from "react";
 import {skills} from "../Data/skills";
 
 export default function SkillsPage() {

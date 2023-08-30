@@ -27,3 +27,22 @@
     position: absolute;
     /* top: 3.5rem; */
   }
+
+
+  .outerWindow{
+    height: 100%;
+    overflow: scroll;
+    -ms-overflow-style: none; 
+  }
+  
+  .outerWindow::-webkit-scrollbar {
+    display: none;
+  }
+
+  .outerContact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
