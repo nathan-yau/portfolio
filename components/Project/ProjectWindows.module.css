@@ -5,7 +5,7 @@
     width: max(65%,600px);
     height: 450px;
     position: absolute;
-    background: rgba(229, 229, 229, 0.9);
+    background: rgba(var(--window-rgba));
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(12.6px);
@@ -34,7 +34,7 @@
 .windowTitleText {
     font-size: 20px;
     font-weight: 600;
-    color: #000;
+    color: rgb(var(--foreground-rgb));
     line-height: 1.5;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
